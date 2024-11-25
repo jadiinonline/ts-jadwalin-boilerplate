@@ -1,10 +1,11 @@
-import {Sequelize} from "sequelize"
+import {Sequelize} from "sequelize-typescript"
 import { envConfig } from "./environment";
 
 
 const sequelize = new Sequelize(envConfig.DB_NAME!, envConfig.DB_USER!, envConfig.DB_PASS, {
     host: envConfig.DB_HOST,
-    dialect: "postgres"
+    dialect: "postgres",
+    models : [__dirname + "/./models/public"]
   });
 
 
